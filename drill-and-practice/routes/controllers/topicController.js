@@ -25,7 +25,6 @@ const addTopic = async ({ render, user, request, response }) => {
 };
 
 const listTopics = async ({ render, user }) => {
-    console.log(user)
     render("topics.eta", {
         topics: await topicService.listTopics(),
         user: user,
