@@ -1,0 +1,9 @@
+<% if (it.result === "correct") { %>
+    <h2>Correct!</h2>
+    <a href="/quiz/<%= it.tId %>">Next question</a>
+<% } else { %>
+    <h2>Incorrect!</h2>
+    <h3>The correct answer was:</h3>
+    <h3><%= it.answer %></h3>
+    <a href="/quiz/<%= it.tId %>">Next question</a>
+<% }; %>

@@ -1,0 +1,17 @@
+<% layout('./layouts/layout.eta') %>
+
+<h1>Welcome to question app!</h1>
+
+<p style="font-size: 30px;">This is an application where you can answer questions from different topics.</p>
+<p style="font-size: 30px;">Anyone can add a new question to the existing topics. If you have a good idea for a topic contact the admin and he might make it happen!.</p>
+<p style="font-size: 25px;">If you are a old friend, you can simply log in using the link below</p>
+<p style="font-size: 25px;">If you are a new here, simply register using the other link below</p>
+<p style="font-size: 40px;">Have fun!</p>
+
+<a href="/auth/login">Already a user? Login here!</a></br>
+<a href="/auth/register">No account yet? Register here!</a>
+
+<p style="margin-top: 20px;"><b> Here are some statistics:</p>
+<p>Current amount of topics: <%= it.topics %></p>
+<p>Current amount of questions: <%= it.questions %></p>
+<p>Current amount of answers: <%= it.answers %></b></p>
