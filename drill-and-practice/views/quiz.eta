@@ -4,18 +4,37 @@
 
 <h2>Existing topics:</h2>
 
+<% if (!it.error) { %>
+  <% if (it.topics && it.topics.length > 0) { %>
 
-<% if (it.topics && it.topics.length > 0) { %>
+    <ul>
+    <% it.topics.forEach(topic => { %>
+      <li>
+          <a href="/quiz/<%= topic.id %>"><%= topic.name %></a>
+      </li> 
+    <% }); %>
+    </ul>
 
-<ul>
-<% it.topics.forEach(topic => { %>
-  <li>
-      <a href="/quiz/<%= topic.id %>"><%= topic.name %></a>
-  </li> 
-<% }); %>
-</ul>
+    <% } else { %>
+      <p>None available yet!</p>
 
+    <% } %>
 <% } else { %>
-<p>None available yet!</p>
 
-<% } %>
+<h1> That topic has no questions yet! </h1>
+
+  <% if (it.topics && it.topics.length > 0) { %>
+
+      <ul>
+      <% it.topics.forEach(topic => { %>
+        <li>
+            <a href="/quiz/<%= topic.id %>"><%= topic.name %></a>
+        </li> 
+      <% }); %>
+      </ul>
+
+  <% } else { %>
+      <p>None available yet!</p>
+  <% } %>
+<% } %> 
+

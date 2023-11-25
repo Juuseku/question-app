@@ -5,13 +5,21 @@
 
 
 <h2> Here are your options:</h2>
-<ul>
+
+<% if (it.options.length < 1 ) { %>
+  <h1> No options yet! </h1>
+<% } else { %>
+  <ul>
 <% it.options.forEach(option => { %>
-  <li>
-    <form method="POST" action="/quiz/<%= it.question.topic_id %>/questions/<%= it.question.id %>/options/<%= option.id %>">
+  
+   <form method="POST" action="/quiz/<%= it.question.topic_id %>/questions/<%= it.question.id %>/options/<%= option.id %>">
+    <li>
       <%= option.option_text %>
       <input type="submit" value="Choose"/>
-    </form>
-  </li> 
+    </li> 
+   </form>
+  
 <% }); %>
 </ul>
+<% } %>
+
