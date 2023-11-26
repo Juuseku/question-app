@@ -3,18 +3,19 @@ import * as topicService from "../../services/topicService.js";
 const addTopic = async ({ render, user, request, response }) => {
     const body = request.body({ type: "form" });
     const params = await body.value;
+    console.log(user)
     if (user.admin) {
-        if (params.get("topic").length < 1) {
+        if (params.get("name").length < 1) {
             const errorData = {
                 errors: ["Topic has to be at least one character long."],
                 topics: await topicService.listTopics(),
-                topic: params.get("topic"),
+                topic: params.get("name"),
             };
             render("/topics", errorData);
         } else {
             await topicService.addTopic(
                 user.id,
-                params.get("topic"),
+                params.get("name"),
             );
             response.redirect("/topics");
         }

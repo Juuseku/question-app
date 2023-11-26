@@ -36,7 +36,7 @@
 
     <form method="POST" action="/topics">
       Topic name:<br/>
-      <input type="text" name="topic" value="<%= it.topic %>"/><br/>
+      <input type="text" name="name" value="<%= it.topic %>"/><br/>
       <input type="submit" value="Add"/>
       </form>
 
@@ -44,7 +44,7 @@
 
       <form method="POST" action="/topics">
       Topic name:<br/>
-      <input type="text" name="topic" /><br/>
+      <input type="text" name="name" /><br/>
       <input type="submit" value="Add"/>
       </form>
 

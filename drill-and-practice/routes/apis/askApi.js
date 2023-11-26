@@ -9,18 +9,26 @@ const listQuestions = async ({ response }) => {
     const qId = questions[question].id;
     const options = await optionService.showOptions(qId);
 
+
     options.forEach(option => {
+        const toBeAddedId = option.id;
+        const toBeAddedText = option.option_text;
+        delete option.id
+        delete option.option_text
+        option.optionId = toBeAddedId;
+        option.optionText = toBeAddedText;
         delete option.question_id;
         delete option.is_correct;
 
     });
+
 
     const data = {
         questionId: qId,
         questionText: questions[question].question_text,
         answerOptions: options,
     };
-
+    console.log(data)
     response.body = data
 };
 
