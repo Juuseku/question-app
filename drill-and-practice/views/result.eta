@@ -1,3 +1,5 @@
+<% layout("./layouts/layout.eta") %>
+
 <% if (it.result === "correct") { %>
     <h2>Correct!</h2>
     <a href="/quiz/<%= it.tId %>">Next question</a>
